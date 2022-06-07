@@ -1,0 +1,23 @@
+<nav>
+  <div class="menu-icon" [ngClass]="menuDrawer ? 'open' : ''" (click)="toggleMenu()"> <fa-icon [icon]="faBars"></fa-icon> </div>
+
+  <div class="logo">Orchid-Bakery</div>
+
+  <div class="nav-items" >
+     <li><a href="#">Home</a></li>
+     <li><a href="food">Foods</a></li>
+     <li><a href="beverages">Beverages</a></li>
+     <li><a href="cakes">Cakes</a></li>
+  </div>
+
+  <div class="cancel-icon" (click)="toggleMenu()"><fa-icon [icon]="faTimes"></fa-icon></div>
+
+  <form action="#">
+     <input type="search" class="search-data" placeholder="Search" required>
+     <button type="submit">
+      <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+     </button>
+  </form>
+  <a *ngIf="!isLoggedIn" class="login" href="/login" (click)= "login()" >Login</a>
+  <a *ngIf="isLoggedIn" class="logout" href="/login" (click)= "Logout()" >LogOut</a>
+</nav>

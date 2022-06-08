@@ -10,6 +10,10 @@
 body {
 	background: linear-gradient(90deg, #C7C5F4, #776BCC);
 }
+.main-container {
+  background-image: url(../../../assets/images/login/coffeee.jpg);
+  background-size: cover;
+}
 
 .container {
 	display: flex;
@@ -51,7 +55,7 @@ body {
 .screen__background__shape1 {
 	height: 520px;
 	width: 520px;
-	background: #FFF;
+	background: linear-gradient(270deg, #ddd6f3, #faaca8);
 	top: -50px;
 	right: 120px;
 	border-radius: 0 72px 0 0;
@@ -60,7 +64,7 @@ body {
 .screen__background__shape2 {
 	height: 220px;
 	width: 220px;
-	background: #6C63AC;
+  background: #753a88;
 	top: -172px;
 	right: 0;
 	border-radius: 32px;
@@ -69,7 +73,7 @@ body {
 .screen__background__shape3 {
 	height: 540px;
 	width: 190px;
-	background: linear-gradient(270deg, #5D54A4, #6A679E);
+	background: linear-gradient(270deg, #cc2b5e, #753a88);
 	top: -24px;
 	right: 0;
 	border-radius: 32px;
@@ -78,7 +82,7 @@ body {
 .screen__background__shape4 {
 	height: 400px;
 	width: 200px;
-	background: #7E7BB9;
+	background: linear-gradient(270deg, #cc2b5e, #753a88);
 	top: 420px;
 	right: 50px;
 	border-radius: 60px;
@@ -103,7 +107,7 @@ body {
 
 .login__input {
 	border: none;
-	border-bottom: 2px solid #D1D1D4;
+	border-bottom: 2px solid darkslategray;
 	background: none;
 	padding: 10px;
 	padding-left: 24px;
@@ -123,7 +127,8 @@ body {
 	background: #fff;
 	font-size: 14px;
 	margin-top: 30px;
-	padding: 12px 20px;
+  margin-left: 10px;
+	padding: 10px 28px;
 	border-radius: 38px;
 	border: 1px solid #D4D3E8;
 	text-transform: uppercase;
@@ -190,8 +195,8 @@ body {
 .router_navigation_login {
 	background: #fff;
 	font-size: 14px;
-	padding: 12px 20px;
-	border-radius: 26px;
+	padding: 18px 24px;
+	border-radius: 38px;
 	border: 1px solid #D4D3E8;
 	text-transform: uppercase;
 	font-weight: 700;

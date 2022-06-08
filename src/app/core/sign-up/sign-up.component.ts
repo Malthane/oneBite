@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { SignUpService } from 'src/app/Services/sign-up.service';
+import { faChevronCircleRight, faUser, faLock, faPersonThroughWindow, faPersonWalkingArrowRight} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-sign-up',
@@ -11,10 +13,13 @@ import { SignUpService } from 'src/app/Services/sign-up.service';
 export class SignUpComponent implements OnInit {
 
   signUpForm = new FormGroup({
-    email : new FormControl(''),
-    password : new FormControl('')
+    email : new FormControl('', [Validators.required, Validators.email]),
+    password : new FormControl('', [Validators.required, Validators.minLength(4)])
   })
   signUpData : any
+  faUser = faUser;
+  faLock = faLock;
+  faPersonThroughWindow = faPersonWalkingArrowRight;
 
   constructor(private signUp: SignUpService, private route: Router) { }
 
@@ -32,4 +37,16 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit( ) {}
+
+  get userEmail() {
+    return this.signUpForm.get('email');
+  }
+
+  get password() {
+    return this.signUpForm.get('password');
+  }
+
+
+
+
 }

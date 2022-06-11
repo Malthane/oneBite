@@ -1,35 +1,39 @@
-<!-- <div *ngFor= "let user of roy" class="card" style="width: 12rem;">
-  <img class="card-img-top" src="../../../assets/images/Black_Forest.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{user.name}}</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div> -->
+<button
+  type="button"
+  class="filter-button btn-outline-secondary"
+  (click)="onFilterClick()"
+>
+  Filter
+  <fa-icon [icon]="faFilter"></fa-icon>
+</button>
 
 <div class="row">
-  <div *ngFor="let user of CakeData" class="col-sm-3">
+  <div *ngFor="let user of CakeData" class="card" style="width: 16rem">
     <img
       *ngFor="let image of images"
       class="card-img-top"
       [src]="image"
       alt="Card image cap"
     />
-    <div class="card">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ user.name }}</h5>
-          <p class="card-text">{{ user.des }}</p>
-          <p>{{ user.price }}</p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
-        </div>
-      </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ user.name }}</h5>
+      <p class="card-text">{{ user.des }}</p>
+      <span class="card-price">{{ user.price }}</span>
+      <span class="card-rating">
+        <fa-icon [icon]="faStar"></fa-icon>
+        {{ user.rating }}
+      </span>
+      <a href="#" class="add-to-cart-btn btn-success btn-lg btn-block">Add to Cart</a>
     </div>
   </div>
 </div>
 
 <div *ngIf="isSpinnerVisible" class="d-flex justify-content-center">
-<div class="spinner-border text-info" style="width: 4rem; height: 4rem;" role="status">
-  <span class="sr-only">Loading...</span>
-</div>
+  <div
+    class="spinner-border text-info"
+    style="width: 4rem; height: 4rem"
+    role="status"
+  >
+    <span class="sr-only">Loading...</span>
+  </div>
 </div>

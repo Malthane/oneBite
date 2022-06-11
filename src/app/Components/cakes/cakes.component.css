@@ -1,0 +1,65 @@
+.row {
+  margin-top: 17px;
+}
+
+.filter-button {
+  position: absolute;
+  right: 56px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.filter {
+  position: absolute;
+  top: 77px;
+  right: 52px;
+}
+
+.card {
+  border-radius: 20px;
+  margin: 30px;
+}
+
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-bottom: 7px;
+  padding: 5px 0px 0px 5px;
+}
+
+.add-to-cart-btn {
+  margin-top: 10px;
+}
+
+.card-price {
+  margin-bottom: 7px;
+  padding: 0px 0px 0px 12px;
+  font-weight: 600;
+}
+
+.card-rating {
+  font-weight: 600;
+  padding-left: 135px;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+.card-img-top {
+  border-radius: 20px 20px 0px 0px;
+  height: 50%;
+}
+
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-bottom: 7px;
+  padding: 0px 0px 0px 5px;
+}

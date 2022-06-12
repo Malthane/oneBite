@@ -1,25 +1,25 @@
-<!-- <button
-  type="button"
-  class="filter-button btn-outline-secondary"
-  (click)="onFilterClick()"
->
-  Filter
-  <fa-icon [icon]="faFilter"></fa-icon>
-</button> -->
+<button class="btn-pizza" role="button">Pizza</button>
+
+<button class="btn-pizza" role="button">Pasta</button>
+
+
 
 <div class="row">
-  <div *ngFor="let user of foodData" class="card" style="width: 16rem">
+  <div *ngFor= "let user of foodData ; let i = index" class="card" style="width: 16rem">
     <img
-      *ngFor="let image of images"
       class="card-img-top"
-      [src]="image"
-      alt="Card image cap"
+      [src]= "images[i]"
+      alt="pasta image loading"
     />
     <div class="card-body">
       <h5 class="card-title">{{ user.name }}</h5>
       <p class="card-text">{{ user.des }}</p>
-      <p class="card-price">{{ user.price }}</p>
-      <a href="#" class="btn btn-info btn-lg btn-block">Add to Cart</a>
+      <span class="card-price">{{ user.price }}</span>
+      <span class="card-rating">
+        <fa-icon [icon]="faStar"></fa-icon>
+        {{ user.rating }}
+      </span>
+      <a href="#" class="add-to-cart-btn btn-info btn-lg btn-block">Add to Cart</a>
     </div>
   </div>
 </div>

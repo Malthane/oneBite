@@ -40,7 +40,7 @@ nav .nav-items li a{
   text-decoration: none;
 }
 nav .nav-items li a:hover{
-  color: #ff3d00;
+  color: rgb(251, 57, 80);
 }
 nav form{
   display: flex;

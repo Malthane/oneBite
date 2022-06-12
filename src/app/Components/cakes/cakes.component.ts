@@ -2,7 +2,8 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { from, map } from 'rxjs';
 import { DataService } from 'src/app/Services/data.service';
 import { FoodService } from 'src/app/Shared/food.service';
-import { faFilter, faStar} from '@fortawesome/free-solid-svg-icons'
+import { faFilter, faStar, } from '@fortawesome/free-solid-svg-icons';
+// import { } from '@fortawesome/free-regular-svg-icons'
 // import { BeveragesComponent } from '../beverages/beverages.component';
 // import { DeadComponent } from './dead/dead.component';
 
@@ -14,19 +15,20 @@ import { faFilter, faStar} from '@fortawesome/free-solid-svg-icons'
 export class CakesComponent implements OnInit {
   // @ViewChild(DeadComponent) cakeComp! : DeadComponent
   // cakeValue : any
-  faFilter = faFilter
-  faStar = faStar
+  isSpinnerVisible: boolean = false;
+  faFilter = faFilter;
+  faStar = faStar;
   data: any;
   CakeData: any = [];
-  images: any = ['/assets/images/x.jpg'];
-  // '/assets/images/y.jpg',
-  // '/assets/images/z.jpg',
-  isSpinnerVisible: boolean = false;
+  images: any = [
+    '/assets/images/cakes/x.jpg',
+    '/assets/images/cakes/y.jpg',
+    '/assets/images/cakes/coffee.cake.jpg',
+    '/assets/images/cakes/vanila.jpg',
+    '/assets/images/cakes/z.jpg',
+  ];
 
-  constructor(
-    private DataService: DataService,
-    private shared: FoodService,
-    ) {}
+  constructor(private DataService: DataService, private shared: FoodService) {}
 
   ngOnInit(): void {
     this.getAllCakes();
@@ -57,9 +59,7 @@ export class CakesComponent implements OnInit {
       });
   }
 
-  onFilterClick() {
-
-  }
+  onFilterClick() {}
 
   // sharedData() {
   //  this.ho = this.shared.loadFood(this.data);
@@ -69,5 +69,4 @@ export class CakesComponent implements OnInit {
   //   sendData(): void {
   //   this.shared.setDataToSend(this.data);
   // }
-
 }

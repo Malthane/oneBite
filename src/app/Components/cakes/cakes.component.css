@@ -1,12 +1,22 @@
 .row {
-  margin-top: 17px;
+  margin-top: 22px;
 }
 
 .filter-button {
   position: absolute;
-  right: 56px;
+  right: 60px;
   margin-top: 5px;
   border-radius: 5px;
+  height: 40px;
+  width: 116px;
+  border: 2px solid #BFC0C0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .filter {

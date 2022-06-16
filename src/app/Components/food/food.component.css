@@ -15,6 +15,10 @@
   right: 52px;
 }
 
+.filter-icon{
+  padding-left: 6px;
+}
+
 .card {
   border-radius: 20px;
   margin: 25px;
@@ -69,7 +73,7 @@
 }
 
 .btn-pizza {
-  margin: 10px 0px 0px 31px;
+  margin: 15px 0px 0px 31px;
   align-items: center;
   appearance: none;
   background-color: #fff;

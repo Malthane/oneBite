@@ -13,7 +13,7 @@ export class FoodComponent implements OnInit {
   data : any
   foodData : any
   faStar = faStar;
-
+  faFilter = faFilter;
   images : any = [
     '/assets/images/pasta/white_sauce.jpg',
     '/assets/images/pasta/red.jpg',
@@ -45,4 +45,10 @@ export class FoodComponent implements OnInit {
         // });
       });
   }
+
+  onFilterClick() {
+
+  }
+
+
 }

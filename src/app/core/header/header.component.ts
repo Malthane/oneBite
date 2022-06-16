@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faMagnifyingGlass, faBars, faTimes} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faTimes, faBars, faXmarkCircle} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   faMagnifyingGlass = faMagnifyingGlass;
   faBars = faBars;
-  faTimes = faTimes;
+  faTimes = faXmarkCircle;
   menuDrawer: boolean = false;
 
   isLoggedIn: any;
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('token')
   }
 
-  toggleMenu() {
+  openMenu() {
     this.menuDrawer = !this.menuDrawer;
     console.log(this.menuDrawer)
   }

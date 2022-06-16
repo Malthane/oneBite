@@ -12,4 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  openOverlay() {
+    // document.getElementById("myNav").style.width = "100%";
+  }
 }

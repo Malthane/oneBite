@@ -34,6 +34,5 @@ export class HeaderComponent implements OnInit {
 
   openMenu() {
     this.menuDrawer = !this.menuDrawer;
-    console.log(this.menuDrawer)
   }
 }

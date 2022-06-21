@@ -47,23 +47,21 @@ export class FoodComponent implements OnInit {
   }
 
   onLowToHighClick() {
-    let sort = this.foodData.sort(
+    this.foodData.sort(
       (a: { price: number }, b: { price: number }) => a.price - b.price
     );
   }
 
   onHighToLowClick() {
-    let sort = this.foodData.sort(
+    this.foodData.sort(
       (a: { price: any }, b: { price: any }) => b.price - a.price
     );
   }
 
   onRatingClick() {
-    let rey = this.foodData.sort(
+    this.foodData.sort(
       (a: { rating: number }, b: { rating: number }) =>
         Number(b.rating) - Number(a.rating)
     );
   }
-
-
 }

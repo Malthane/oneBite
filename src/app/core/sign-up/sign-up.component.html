@@ -34,7 +34,7 @@
               *ngIf="password && password.invalid && password.touched"
               class="signUpError"
             >
-              Password length must be 6
+              Password length must be 4
             </span>
           </div>
           <button
@@ -42,9 +42,10 @@
             type="submit"
             [disabled]="signUpForm.invalid"
             (click)="onSignUp()"
-          >
-          <span class="button__text">Sign Up</span>
-            <fa-icon class="faPersonThroughWindow" [icon]="faPersonThroughWindow"></fa-icon>
+            [disabled]
+          > Sign Up
+          <span class="button__text/" ></span>
+            <!-- <fa-icon class="faPersonThroughWindow" [icon]="faPersonThroughWindow"></fa-icon> -->
           </button>
           <a class="router_navigation" routerLink="/login">
             Already have an account? Login</a
@@ -53,9 +54,14 @@
         <div class="social-login">
           <h3>log in via</h3>
           <div class="social-icons">
-            <a href="#" class="social-login__icon fab fa-instagram"></a>
-            <a href="#" class="social-login__icon fab fa-facebook"></a>
-            <a href="#" class="social-login__icon fab fa-twitter"></a>
+            <a class="icon-color" href="https://www.instagram.com/?hl=en"><fa-icon [icon]="faInstagram"></fa-icon></a>
+            <a class="icon-color" href="https://www.facebook.com/login/"><fa-icon class="facebookIcon" [icon]="faFacebook"></fa-icon></a>
+            <a class="icon-color" href="https://twitter.com/i/flow/login"><fa-icon [icon]="faTwitter"></fa-icon></a>
+            <a href="https://www.linkedin.com/login"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+            <a href="https://www.youtube.com/"><fa-icon [icon]="faWhatsapp"></fa-icon></a>
+            <!-- <a href="https://www.instagram.com/?hl=en" target="_blank" class="social-login__icon fab fa-instagram" title="Instagram"></a>
+            <a href="https://www.facebook.com/login/" target="_blank" class="social-login__icon fab fa-facebook" title="Facebook"></a>
+            <a href="https://twitter.com/i/flow/login" target="_blank" class="social-login__icon fab fa-twitter" title="Twitter"></a> -->
           </div>
         </div>
       </div>

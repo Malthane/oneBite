@@ -1,7 +1,10 @@
-<button class="btn-pizza" role="button">Sort: High to Low</button>
-<button class="btn-pizza" role="button">Sort: Low to High</button>
-<button class="btn-pizza" role="button">Sort: Rating
-  <fa-icon class="sortStar" [icon]="faStar"></fa-icon>
+<button
+  type="button"
+  class="filter-button btn-outline-dark"
+  (click)="onFilterClick()"
+>
+  Sort by
+  <fa-icon [icon]="faFilter"></fa-icon>
 </button>
 
 <div class="row">

@@ -172,7 +172,7 @@ body {
 .social-icons {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 }
 
 .social-login__icon {

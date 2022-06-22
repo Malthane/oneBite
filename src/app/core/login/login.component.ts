@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
 // import { retry, catchError } from 'rxjs/operators';
-import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faInstagram, faFacebook, faTwitter,faLinkedin,faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faChevronCircleRight, faUser, faLock, faPerson, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
 // import { } from '@fortawesome/free-regular-svg-icons'
 
@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
   faInstagram = faInstagram;
   faFacebook = faFacebook;
   faTwitter = faTwitter;
+  faLinkedin = faLinkedin;
+  faWhatsapp = faWhatsapp;
   faChevronCircleRight = faAnglesRight;
   faUser = faUser;
   faLock = faLock;

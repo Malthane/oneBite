@@ -2,8 +2,8 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { from, map } from 'rxjs';
 import { DataService } from 'src/app/Services/data.service';
 import { FoodService } from 'src/app/Shared/food.service';
-import { faFilter} from '@fortawesome/free-solid-svg-icons';
-import { faStar } from '@fortawesome/free-regular-svg-icons'
+import { faFilter, faStar, } from '@fortawesome/free-solid-svg-icons';
+// import { } from '@fortawesome/free-regular-svg-icons'
 // import { BeveragesComponent } from '../beverages/beverages.component';
 // import { DeadComponent } from './dead/dead.component';
 

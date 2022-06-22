@@ -1,40 +1,16 @@
-<button id="btn-pizza" role="button">Pizza</button>
-<button id="btn-pizza" role="button">Pasta</button>
-<button type="button" id="btn-pizza" data-toggle="modal" data-target="#myModal">
-  Filter
-  <fa-icon class="filter-icon" [icon]="faFilter"></fa-icon>
-</button>
+<button class="btn-pizza" role="button">Pizza</button>
 
-<div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Sort By</h4>
-      </div>
-      <div class="modal-body">
-        <input (click)="onHighToLowClick()" name="filter" type="radio" />
-        <label class="filterBy"> Price : High to Low</label><br />
-        <input (click)="onLowToHighClick()" name="filter" type="radio" />
-        <label class="filterBy"> Price : Low to High</label><br />
-        <input (click)="onRatingClick()" name="filter" type="radio" />
-        <label class="filterBy"> Rating</label><br />
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-info" data-dismiss="modal">
-          Apply
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+<button class="btn-pizza" role="button">Pasta</button>
+
+
 
 <div class="row">
-  <div
-    *ngFor="let user of foodData; let i = index"
-    class="card"
-    style="width: 16rem"
-  >
-    <img class="card-img-top" [src]="images[i]" alt="pasta image loading" />
+  <div *ngFor= "let user of foodData ; let i = index" class="card" style="width: 16rem">
+    <img
+      class="card-img-top"
+      [src]= "images[i]"
+      alt="pasta image loading"
+    />
     <div class="card-body">
       <h5 class="card-title">{{ user.name }}</h5>
       <p class="card-text">{{ user.des }}</p>
@@ -43,16 +19,17 @@
         <fa-icon [icon]="faStar"></fa-icon>
         {{ user.rating }}
       </span>
-      <a href="#" class="add-to-cart-btn btn-info btn-lg btn-block"
-        >Add to Cart</a
-      >
+      <a href="#" class="add-to-cart-btn btn-info btn-lg btn-block">Add to Cart</a>
     </div>
   </div>
 </div>
 
-<div style="text-align:center;">
-<button *ngIf="isSpinnerVisible" class="btn btn-primary" type="button" disabled   style="width: 10rem; height: 3rem; margin-bottom: 15px;">
-  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-  Loading Data...
-</button>
+<div *ngIf="isSpinnerVisible" class="d-flex justify-content-center">
+  <div
+    class="spinner-border text-info"
+    style="width: 4rem; height: 4rem"
+    role="status"
+  >
+    <span class="sr-only">Loading...</span>
+  </div>
 </div>

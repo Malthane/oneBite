@@ -1,11 +1,9 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { from, map } from 'rxjs';
 import { DataService } from 'src/app/Services/data.service';
-import { FoodService } from 'src/app/Shared/food.service';
+import { FoodService } from 'src/app/Shared/services/food.service';
 import { faFilter} from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-regular-svg-icons'
-// import { BeveragesComponent } from '../beverages/beverages.component';
-// import { DeadComponent } from './dead/dead.component';
 
 @Component({
   selector: 'app-cakes',
@@ -13,8 +11,6 @@ import { faStar } from '@fortawesome/free-regular-svg-icons'
   styleUrls: ['./cakes.component.css'],
 })
 export class CakesComponent implements OnInit {
-  // @ViewChild(DeadComponent) cakeComp! : DeadComponent
-  // cakeValue : any
   isSpinnerVisible: boolean = false;
   faFilter = faFilter;
   faStar = faStar;
@@ -32,8 +28,6 @@ export class CakesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllCakes();
-    // this.sharedData();
-    // this.sendData();
   }
 
   getAllCakes() {
@@ -42,12 +36,6 @@ export class CakesComponent implements OnInit {
       .pipe(map((data) => data))
       .subscribe((res) => {
         this.data = res;
-
-        // this.shared.setDataToSend(res);
-        // this.shared.foodData.next(res)
-        // this.shared.loadFood(res);
-        // console.log(this.shared.foodData.value)
-        // console.log(this.shared)
 
         this.CakeData = this.data.Cake.Cakes;
         this.isSpinnerVisible = false;
@@ -61,12 +49,4 @@ export class CakesComponent implements OnInit {
 
   onFilterClick() {}
 
-  // sharedData() {
-  //  this.ho = this.shared.loadFood(this.data);
-  //  console.log(this.ho)
-  // }
-
-  //   sendData(): void {
-  //   this.shared.setDataToSend(this.data);
-  // }
 }

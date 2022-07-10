@@ -9,18 +9,19 @@ import { config } from '../config';
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  // proceedLogin(credential: any) {
-  //   return this.http.post('http://localhost:8000/auth/login', credential);
-  // }
-
   proceedLogin(credential: any) {
-    return this.http.post<AuthResponse>('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key='+config.Api_key, credential, {
-      params: { returnSecureToken: true },
-    })
+    return this.http.post<AuthResponse>(
+      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
+        config.Api_key,
+      credential,
+      {
+        params: { returnSecureToken: true },
+      }
+    );
   }
 
   isUserLoggedIn() {
-    return localStorage.getItem('token')!=null;
+    return localStorage.getItem('token') != null;
   }
 
   getToken() {

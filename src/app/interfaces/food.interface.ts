@@ -1,7 +1,7 @@
-export interface CommunicationData {
-  des?: string;
-  id?: string;
-  name?: string;
-  price?: string;
-  rating?: string;
+export interface pasta {
+  des: string;
+  id: number;
+  name: string;
+  price: string;
+  rating: number;
 }

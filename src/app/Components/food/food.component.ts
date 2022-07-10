@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { filter, map } from 'rxjs';
-import { CommunicationData } from 'src/app/interfaces/food.interface';
 import { DataService } from 'src/app/Services/data.service';
 import { faFilter, faStar } from '@fortawesome/free-solid-svg-icons';
+import { FoodService } from 'src/app/Shared/services/food.service';
 @Component({
   selector: 'app-food',
   templateUrl: './food.component.html',
@@ -22,29 +21,22 @@ export class FoodComponent implements OnInit {
     '/assets/images/pasta/tomato.jpg',
   ];
 
-  constructor(private DataService: DataService) {}
+  constructor(
+    private DataService: DataService,
+    private FoodService: FoodService,
+    ) {}
 
   ngOnInit(): void {
-    this.getAllFoods();
+
+    this.FoodService.userInfo$.subscribe( user => {
+      this.data = user;
+      console.log(this.data)
+      this.foodData = this.data.foods.pasta;
+      console.log(this.foodData)
+    })
+
   }
 
-  getAllFoods() {
-    this.isSpinnerVisible = true;
-    this.DataService.loadData()
-      // .pipe(map( data => { data}))
-      // .pipe(filter(response => response.price.length > 5),)
-      .subscribe((res) => {
-        this.data = res;
-        this.foodData = this.data.foods.pasta;
-        console.log(this.foodData);
-        this.isSpinnerVisible = false;
-
-        // const dey = from(this.CakeData); //converted array into observable stream
-        // dey.subscribe((res) => {
-        // console.log(res);
-        // });
-      });
-  }
 
   onLowToHighClick() {
     this.foodData.sort(

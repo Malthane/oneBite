@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.minLength(4)]),
   });
 
+  isAlert : boolean
   loginData: any;
   faInstagram = faInstagram;
   faFacebook = faFacebook;
@@ -26,22 +27,32 @@ export class LoginComponent implements OnInit {
   faUser = faUser;
   faLock = faLock;
 
-  constructor(private AuthService: AuthService, private route: Router) {}
+  constructor(private AuthService: AuthService, private route: Router) { }
 
   ngOnInit(): void {
   }
 
   onLogin() {
-    if (this.loginForm.valid)
-      this.AuthService.proceedLogin(this.loginForm.value).subscribe((res) => {
-        if(res!=null) {
+    const loginData = {
+      next: (res: any) => {
+        if (res != null) {
           this.loginData = res;
-          // console.log(this.loginData)
           localStorage.setItem('token', this.loginData.idToken)
           this.route.navigate([''])
         }
-      });
+      },
+      error: (err: any) => {
+        console.log(err)
+        if (err.error.error.code = 400) {
+          this.isAlert = true
+        }
+        setTimeout(() => {
+          this.isAlert = false
+        }, 4000);
+      },
+    };
+    this.AuthService.proceedLogin(this.loginForm.value).subscribe(loginData)
   }
 
-  onSubmit() {}
+  onSubmit() { }
 }

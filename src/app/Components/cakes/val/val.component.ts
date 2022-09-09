@@ -13,7 +13,7 @@ export class ValComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit(): void {
-
+    console.log(this.sendVal);
   }
 
   ngAfterViewInit() {

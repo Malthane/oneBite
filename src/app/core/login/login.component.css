@@ -209,3 +209,8 @@ body {
   position: absolute;
   margin: 28px 0 0 10px;
 }
+
+.alert-danger {
+  padding: 7px 40px 7px 40px;
+    letter-spacing: 1px;
+}

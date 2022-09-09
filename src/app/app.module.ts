@@ -14,6 +14,7 @@ import { FoodComponent } from './Components/food/food.component';
 import { BeveragesComponent } from './Components/beverages/beverages.component';
 import { CakesComponent } from './Components/cakes/cakes.component';
 import { HomeComponent } from './Components/home/home.component';
+import { ValComponent } from './Components/cakes/val/val.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeComponent } from './Components/home/home.component';
     FoodComponent,
     BeveragesComponent,
     CakesComponent,
-    HomeComponent
+    HomeComponent,
+    ValComponent
   ],
   imports: [
     HttpClientModule,

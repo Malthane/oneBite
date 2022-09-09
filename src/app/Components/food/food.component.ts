@@ -27,16 +27,19 @@ export class FoodComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-
-    this.FoodService.userInfo$.subscribe( user => {
-      this.data = user;
-      console.log(this.data)
-      this.foodData = this.data.foods.pasta;
-      console.log(this.foodData)
-    })
-
+   this.pastaAndPizza()
   }
 
+  pastaAndPizza() {
+    this.isSpinnerVisible = true
+    this.FoodService.userInfo$.subscribe( user => {
+    this.data = user;
+    // console.log(this.data)
+    this.foodData = this.data.foods.pasta;
+    this.isSpinnerVisible = false
+    console.log(this.foodData)
+  })
+}
 
   onLowToHighClick() {
     this.foodData.sort(

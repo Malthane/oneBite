@@ -60,13 +60,10 @@ export class CakesComponent implements OnInit, AfterViewInit{
       .pipe(map((data) => data))
       .subscribe((res) => {
         this.data = res;
-
         this.CakeData = this.data.Cake.Cakes;
         this.isSpinnerVisible = false;
-        // console.log(this.CakeData);
         const dey = from(this.CakeData); //converted array into observable stream
         dey.subscribe((res) => {
-          // console.log(res);
         });
       });
   }

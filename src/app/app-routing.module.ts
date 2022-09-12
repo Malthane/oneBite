@@ -17,7 +17,12 @@ const routes: Routes = [
   { path: 'val', component: ValComponent},
   { path: 'food', component: FoodComponent, canActivate: [AuthGuard]},
   { path: 'beverages', component: BeveragesComponent, canActivate: [AuthGuard]},
-  { path: 'cakes', component: CakesComponent, canActivate: [AuthGuard]}
+  { path: 'cakes', component: CakesComponent, canActivate: [AuthGuard]},
+  {
+    path: 'checkout',
+    loadChildren: () =>
+     import('../app/checkout/checkout.module').then((m) => m.CheckoutModule)
+  }
 ];
 
 @NgModule({

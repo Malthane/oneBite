@@ -43,8 +43,8 @@
         <fa-icon [icon]="faStar"></fa-icon>
         {{ user.rating }}
       </span>
-      <a href="#" class="add-to-cart-btn btn-info btn-lg btn-block"
-        >Add to Cart</a
+      <button (click)="addToCart()" class="add-to-cart-btn btn-info btn-lg btn-block"
+        >Add to Cart</button
       >
     </div>
   </div>

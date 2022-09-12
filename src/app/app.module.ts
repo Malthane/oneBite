@@ -27,7 +27,7 @@ import { ValComponent } from './Components/cakes/val/val.component';
     BeveragesComponent,
     CakesComponent,
     HomeComponent,
-    ValComponent
+    ValComponent,
   ],
   imports: [
     HttpClientModule,

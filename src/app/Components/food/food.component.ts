@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/Services/data.service';
 import { faFilter, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FoodService } from 'src/app/Shared/services/food.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-food',
   templateUrl: './food.component.html',
@@ -22,6 +23,7 @@ export class FoodComponent implements OnInit {
   ];
 
   constructor(
+    private route: Router,
     private DataService: DataService,
     private FoodService: FoodService,
     ) {}
@@ -37,8 +39,12 @@ export class FoodComponent implements OnInit {
     // console.log(this.data)
     this.foodData = this.data.foods.pasta;
     this.isSpinnerVisible = false
-    console.log(this.foodData)
+    // console.log(this.foodData)
   })
+}
+
+ addToCart() {
+  this.route.navigate(['checkout'])
 }
 
   onLowToHighClick() {

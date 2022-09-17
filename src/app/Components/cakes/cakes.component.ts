@@ -70,4 +70,8 @@ export class CakesComponent implements OnInit, AfterViewInit{
 
   onFilterClick() {}
 
+  addToCart() {
+    this.router.navigate(['checkout'])
+  }
+
 }

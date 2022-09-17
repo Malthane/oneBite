@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./checkout-page.component.css']
 })
 export class CheckoutPageComponent implements OnInit {
+  TotalItem = 3 +' ' + 'items'
 
   constructor() { }
 

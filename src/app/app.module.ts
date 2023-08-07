@@ -14,7 +14,13 @@ import { FoodComponent } from './Components/food/food.component';
 import { BeveragesComponent } from './Components/beverages/beverages.component';
 import { CakesComponent } from './Components/cakes/cakes.component';
 import { HomeComponent } from './Components/home/home.component';
-import { ValComponent } from './Components/cakes/val/val.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { CurrencyPipe } from './pipe/Currency.pipe';
+import { CustomDirective } from './Directive/custom.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,9 @@ import { ValComponent } from './Components/cakes/val/val.component';
     BeveragesComponent,
     CakesComponent,
     HomeComponent,
-    ValComponent,
+    ProfileComponent,
+    CurrencyPipe,
+    CustomDirective
   ],
   imports: [
     HttpClientModule,
@@ -36,6 +44,10 @@ import { ValComponent } from './Components/cakes/val/val.component';
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]

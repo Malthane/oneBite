@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./food.component.css'],
 })
 export class FoodComponent implements OnInit {
+  getInputVal = '';
   isSpinnerVisible: boolean = false;
   data: any;
   foodData: any;
@@ -32,9 +33,15 @@ export class FoodComponent implements OnInit {
    this.pastaAndPizza()
   }
 
+  getInputSearch(innputVal: string) {
+    this.getInputVal = innputVal;
+    console.log(this.getInputVal);
+    
+  }
+
   pastaAndPizza() {
     this.isSpinnerVisible = true
-    this.FoodService.userInfo$.subscribe( user => {
+    this.DataService.loadData().subscribe( user => {
     this.data = user;
     // console.log(this.data)
     this.foodData = this.data.foods.pasta;

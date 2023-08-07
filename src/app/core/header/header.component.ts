@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   faMagnifyingGlass,
   faBars,
@@ -18,9 +18,11 @@ export class HeaderComponent implements OnInit {
   faBars = faBars;
   faTimes = faXmarkCircle;
   menuDrawer: boolean = false;
-
   isLoggedIn: any;
+  searchInput = ''
 
+  @Output() searchValue: EventEmitter<string> = new EventEmitter<string>()
+  
   constructor(
     private route: Router,
     ) {}
@@ -46,7 +48,10 @@ export class HeaderComponent implements OnInit {
   }
 
   openMenu() {
-    this.menuDrawer = !this.menuDrawer;
-  }
+    // this.menuDrawer = !this.menuDrawer
+  }                   
 
+  getValueByInput() {
+    this.searchValue.emit(this.searchInput)
+  }
 }

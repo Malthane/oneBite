@@ -1,14 +1,23 @@
 <nav>
-  <button class="bar-icon" (click)="openMenu()">
-    <fa-icon [icon]="faBars"></fa-icon>
+  <button class="bar-icon" (click)= "openMenu()" >
+    <fa-icon [icon]="faBars">
+      
+      <!-- {{menuDrawer ? "Close" : "Open"}} -->
+    </fa-icon>
+   
   </button>
   <div class="logo">OneBite</div>
-  <div id="openDrawer" [ngClass]="menuDrawer ? 'open' : ''">
-    <div class="cancel-icon" (click)="openMenu()">
-      <fa-icon [icon]="faTimes"></fa-icon>
+  <div class="openDrawer" >
+    <div class="cancel-icon" (click)= "openMenu()">
+    
+      <fa-icon  [icon]="faTimes"
+      > 
+      <!-- {{menuDrawer ? "Close" : "Open"}} -->
+      </fa-icon>
+     
     </div>
 
-    <div class="nav-items">
+    <div  class="nav-items">
       <li><a href="#">Home</a></li>
       <li><a href="food">Foods</a></li>
       <li><a href="beverages">Beverages</a></li>
@@ -22,11 +31,18 @@
       class="search-data"
       placeholder="Search for dish"
       required
+      name="first"
+      [(ngModel)]="searchInput"
+      (input)="getValueByInput()"
     />
     <button type="submit">
       <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
     </button>
   </form>
+  <span class="profile">
+    <a href="profile">Profile</a>
+  </span>
+ 
   <a *ngIf="!isLoggedIn" class="login" href="/login" (click)="login()">Login</a>
   <a *ngIf="isLoggedIn" class="logout" href="/login" (click)="Logout()"
     >LogOut</a

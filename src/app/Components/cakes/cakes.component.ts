@@ -1,5 +1,4 @@
 import {  AfterViewInit, Component, OnInit,  } from '@angular/core';
-import { from, map } from 'rxjs';
 import { DataService } from 'src/app/Services/data.service';
 import { FoodService } from 'src/app/Shared/services/food.service';
 import { faFilter} from '@fortawesome/free-solid-svg-icons';
@@ -56,16 +55,28 @@ export class CakesComponent implements OnInit, AfterViewInit{
 
   getAllCakes() {
     this.isSpinnerVisible = true;
-    this.DataService.loadData()
-      .pipe(map((data) => data))
-      .subscribe((res) => {
-        this.data = res;
-        this.CakeData = this.data.Cake.Cakes;
-        this.isSpinnerVisible = false;
-        const dey = from(this.CakeData); //converted array into observable stream
-        dey.subscribe((res) => {
-        });
-      });
+    this.DataService.loadData().subscribe((res: any) => {
+ 
+      
+      this.CakeData = res.Cake.Cakes
+      this.isSpinnerVisible = false;
+      console.log(this.CakeData);
+    })
+
+    // this.DataService.loadData()
+    //   .pipe(map((data) => data))
+    //   .subscribe((res) => {
+    //     console.log(res);
+        
+    //     // this.data = res;
+    //     // this.CakeData = this.data.Cake.Cakes;
+    //     this.isSpinnerVisible = false;
+    //     // const dey = from(this.CakeData); //converted array into observable stream
+    //     // dey.subscribe((res) => {
+    //     //   console.log(res);
+          
+    //     // });
+    //   });
   }
 
   onFilterClick() {}

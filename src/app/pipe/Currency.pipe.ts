@@ -7,6 +7,9 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class CurrencyPipe implements PipeTransform {
     transform(value: any, ...args: any) {
         const[val] = args
-        return value * val
+        return value * 80
     }
 }
+
+
+

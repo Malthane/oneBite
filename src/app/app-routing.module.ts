@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'food', component: FoodComponent, canActivate: [AuthGuard]},
   { path: 'beverages', component: BeveragesComponent, canActivate: [AuthGuard]},
   { path: 'cakes', component: CakesComponent, canActivate: [AuthGuard]},
-  { path: 'profile', component: ProfileComponent},
+  { path: 'profile', component: ProfileComponent,},
   {
     path: 'checkout',
     loadChildren: () =>

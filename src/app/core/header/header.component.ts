@@ -3,6 +3,7 @@ import {
   faMagnifyingGlass,
   faBars,
   faXmarkCircle,
+  faCartShopping,
 } from '@fortawesome/free-solid-svg-icons';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
@@ -14,6 +15,7 @@ import { filter } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 
+  faCartShopping = faCartShopping
   faMagnifyingGlass = faMagnifyingGlass;
   faBars = faBars;
   faTimes = faXmarkCircle;

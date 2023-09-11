@@ -42,6 +42,10 @@
   <span class="profile">
     <a href="profile">Profile</a>
   </span>
+
+  <span class="shopping-cart">
+    <fa-icon [icon]="faCartShopping"></fa-icon>
+  </span>
  
   <a *ngIf="!isLoggedIn" class="login" href="/login" (click)="login()">Login</a>
   <a *ngIf="isLoggedIn" class="logout" href="/login" (click)="Logout()"

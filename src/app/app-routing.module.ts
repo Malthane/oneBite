@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BeveragesComponent } from './Components/beverages/beverages.component';
-import { CakesComponent } from './Components/cakes/cakes.component';
 import { FoodComponent } from './Components/food/food.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './core/login/login.component';
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'food', component: FoodComponent, canActivate: [AuthGuard]},
   { path: 'beverages', component: BeveragesComponent, canActivate: [AuthGuard]},
-  { path: 'cakes', component: CakesComponent, canActivate: [AuthGuard]},
   { path: 'profile', component: ProfileComponent,},
   {
     path: 'checkout',

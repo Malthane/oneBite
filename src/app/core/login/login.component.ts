@@ -2,10 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
-// import { retry, catchError } from 'rxjs/operators';
-import { faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faChevronCircleRight, faUser, faLock, faPerson, faAnglesRight } from '@fortawesome/free-solid-svg-icons';
-// import { } from '@fortawesome/free-regular-svg-icons'
+import {
+  faInstagram,
+  faFacebook,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  faUser,
+  faLock,
+  faAnglesRight,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -15,10 +21,13 @@ import { faChevronCircleRight, faUser, faLock, faPerson, faAnglesRight } from '@
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4),
+    ]),
   });
 
-  isAlert : boolean
+  isAlert: boolean;
   loginData: any;
   faInstagram = faInstagram;
   faFacebook = faFacebook;
@@ -27,32 +36,31 @@ export class LoginComponent implements OnInit {
   faUser = faUser;
   faLock = faLock;
 
-  constructor(private AuthService: AuthService, private route: Router) { }
+  constructor(private AuthService: AuthService, private route: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onLogin() {
     const loginData = {
       next: (res: any) => {
         if (res != null) {
           this.loginData = res;
-          localStorage.setItem('token', this.loginData.idToken)
-          this.route.navigate([''])
+          localStorage.setItem('token', this.loginData.idToken);
+          this.route.navigate(['']);
         }
       },
       error: (err: any) => {
-        console.log(err)
-        if (err.error.error.code = 400) {
-          this.isAlert = true
+        console.log(err);
+        if ((err.error.error.code = 400)) {
+          this.isAlert = true;
         }
         setTimeout(() => {
-          this.isAlert = false
+          this.isAlert = false;
         }, 4000);
       },
     };
-    this.AuthService.proceedLogin(this.loginForm.value).subscribe(loginData)
+    this.AuthService.proceedLogin(this.loginForm.value).subscribe(loginData);
   }
 
-  onSubmit() { }
+  onSubmit() {}
 }
